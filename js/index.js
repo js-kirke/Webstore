@@ -1,26 +1,26 @@
 const products = [
   {
-    name: `Product One`,
-    description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
+  name: `Product One`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
   },{
-    name: `Product Two`,
-    description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
+  name: `Product Two`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
   },{
-    name: `Product Two`,
-    description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
+  name: `Product Three`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
   },{
-    name: `Product Two`,
-    description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
+  name: `Product Four`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
   },{
-    name: `Product Two`,
-    description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
+  name: `Product Five`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
   }
-];
+]
 
 
-function getProductsAsHTMLString (productJS) {
+function getProductsAsHTMLString(product) {
 
-  return `<article class="productJS">
+  return `<article class="product">
   <header>
     <img class="roundCorner" src="img/product.jpg" alt="Product Image">
   </header>
@@ -60,4 +60,9 @@ function getProductsAsHTMLString (productJS) {
 </article>`
 }
 
-document.getElementById(`productJS`).innerHTML = getProductsAsHTMLString(product);
+function renderProducts(arr){
+  const arrOfHtml = arr.map (getProductsAsHTMLString);
+  const strOfHtml = arrOfHtml.join('\n');
+  document.getElementById('products').innerHTML = strOfHtml;
+}
+renderProducts(products);
