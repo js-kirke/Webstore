@@ -1,0 +1,107 @@
+html{
+	--primary-a:#AB47BC;
+	--primary-b:#8E24AA;
+	--secondary-a:#4e03da;
+	--secondary-b:#7b5bee;
+	--background:rgb(235, 233, 233);
+	--error:#b00020;
+
+/*** Foreground colour***/
+	--on-primary:#e7e2f7;
+	--on-secondary:#f5e2e2;
+	--on-background:#222222;
+	--on-error:#9c48eb;
+}
+
+body{
+  background-color:var(--background);
+  font-family: helvetica;
+}
+
+
+
+h1{
+  font-size: 2em;
+  padding: .5em;
+}
+
+
+h2{
+  font-size: 1.2em;
+  padding:.5em;
+}
+
+h3{
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  margin-top:.5em;
+}
+
+legend{
+  font-size: 1.5em;
+  padding: .5em;
+}
+
+li{
+  display: inline;
+}
+
+
+.pad{
+  padding: 1.5em
+}
+.searchBar{
+  display: inline;
+  margin-left: 78%
+}
+
+.favAndShopping{
+  display: block;
+  margin-left: 95%
+}
+
+.pageNumber{
+  display: inline;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.logo{
+  max-width: 50%;
+  padding: .5em;
+  background-color: var(--primary-b);
+  opacity: 70%;
+  margin: 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.product{
+  max-width: 25%;
+  display: inline-block;
+  margin: 2.5em;
+  padding: 1.5em;
+  text-align: center;
+  background-color: var(--primary-a);
+  border-radius: 1.5em;
+}
+
+.bottomFoot{
+  display: inline;
+  text-align: center;
+  padding: .5em;
+}
+
+  .roundCorner{
+    border-radius: .5em;
+  }
+
+  .padLeft{
+    padding: 1em;
+  }
+
+  .padRight{
+    padding: 1em;
+  }
