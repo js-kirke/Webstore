@@ -1,21 +1,88 @@
 const products = [
   {
   name: `Product One`,
-  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 25.00
   },{
   name: `Product Two`,
-  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 10.00
   },{
   name: `Product Three`,
-  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 20.00
   },{
   name: `Product Four`,
-  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 30.00
   },{
   name: `Product Five`,
-  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Six`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Seven`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Eight`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Nine`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Ten`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Eleven`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Twelve`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Thirteen`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Fourteen`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Fifteen`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Sixteen`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Seventeen`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Eighteen`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Nineteen`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
+  },{
+  name: `Product Twenty`,
+  description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+  price: 35.00
   }
 ]
+
+
 
 
 function getProductsAsHTMLString(product) {
@@ -50,7 +117,7 @@ function getProductsAsHTMLString(product) {
         <dt>Rating</dt>
         <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
       </dl>
-      <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
+      <data value="${product.price}"><ins>$ ${product.price}.00</ins></data>
       <button type="button"><span class="material-icons">add_shopping_cart</span></button>
       <button type="button"><span class="material-icons">favorite</span></button>
       <br>
@@ -66,3 +133,20 @@ function renderProducts(arr){
   document.getElementById('products').innerHTML = strOfHtml;
 }
 renderProducts(products);
+
+
+
+function lowCostProd(products) {
+  return products.price < 30.00 ;
+}
+
+function searchByName(event) {
+  const searchTerm = event.target.value; // From the input field
+  const arrNameCheck = products.filter(filterByName, searchTerm)
+  renderProducts(arrNameCheck);
+}
+
+
+document.getElementById('nameSearch').addEventListener('input', searchByName)
+
+document.getElementById('nameSearch').addEventListener('input', searchByName)
