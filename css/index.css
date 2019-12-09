@@ -61,7 +61,7 @@ fieldset{
   border-radius: 1em;
   padding: .5em;
   box-shadow: .5em .5em black;
-  margin: 1em
+  margin: 1em;
 }
 
 option{
@@ -77,7 +77,7 @@ option{
 
 .favAndShopping{
   display: block;
-  margin-left: 95%
+  margin-left: 95%;
 }
 
 .pageNumber{
@@ -112,7 +112,7 @@ option{
 
 .products{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .bottomFoot{
@@ -138,7 +138,7 @@ option{
   }
 
   .bg{
-    background-color: var(--primary-a)
+    background-color: var(--primary-a);
   }
 
   .block{
@@ -205,7 +205,7 @@ body {
   @media only screen and (max-width: 700px) {
 
     .product {
-      font-size: .75em
+      font-size: .75em;
     }
     .products{
       display: grid;
@@ -219,5 +219,4 @@ body {
     .products{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-
   }
