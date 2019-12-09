@@ -27,14 +27,15 @@ h1{
 
 
 h2{
-  font-size: 1.2em;
+  font-size: 1.7em;
   padding:.5em;
 }
 
 h3{
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 1em;
   margin-top:.5em;
+  
 }
 
 legend{
@@ -53,12 +54,25 @@ footer{
 ul{
   margin: 0;
 }
+
+fieldset{
+  background-color: var(--secondary-b);
+  color: var(--on-primary);
+  border-radius: 1em;
+  padding: .5em;
+  box-shadow: .5em .5em black;
+  margin: 1em
+}
+
+option{
+  color: var(--on-primary);
+}
+
 .pad{
-  padding: 1.5em
+  padding: 1.5em;
 }
 .searchBar{
   display: inline;
-  text-align: right;
 }
 
 .favAndShopping{
@@ -84,14 +98,21 @@ ul{
 
 
 .product{
-  max-width: 100;
   display: inline-block;
   margin: 2.5em;
   padding: 1.5em;
   text-align: center;
   background-color: var(--primary-a);
   border-radius: 1.5em;
-  font-size: 1.5em;
+  font-size: 1em;
+  color: var(--on-primary);
+  box-shadow: .5em .5em black;
+  
+}
+
+.products{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr
 }
 
 .bottomFoot{
@@ -115,12 +136,88 @@ ul{
   .prodPic{
     width:20em;
   }
+
+  .bg{
+    background-color: var(--primary-a)
+  }
+
+  .block{
+    display: inline;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 1em helvetica, sans-serif;
+  background-color:var(--background);
+  color: var(--on-background);
+}
+
+.headerbar {
+  background-color: darkslateblue;
+  padding: 0 1em;
+  overflow: hidden;
+}
+
+.mainmenu-toggle {
+  display: block;
+  margin: 1em 0;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.navigation {
+  margin: 1em 0;
+}
+  .navigation ul {
+    list-style: none;
+  }
+
+.mainmenu {
+  background-color:var(--secondary-b);
+  padding: 1em;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10em;
+  height: 100%;
+  transform: translateX(-10em);
+  transition: transform 0.3s;
+  display: grid;
+  font-size: 1.5em;
+}
+  .mainmenu li {
+    line-height: 1.5;
+  }
+    .mainmenu a {
+      color: white;
+      text-decoration: none;
+    }
+.mainmenu.open { /* An element with BOTH .mainmenu and .open */
+  transform: translateX(0em);
+}
+
+.page {
+  padding: 0 1em;
+}
   
-  @media only screen and (min-width: 1000px) {
+  @media only screen and (max-width: 700px) {
+
     .product {
-      max-width: 25%;
+      font-size: .75em
+    }
+    .products{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
     .logo{
       max-width: 100%;
     }
+  }
+  @media only screen and (min-width: 600px) {
+    .products{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
   }
