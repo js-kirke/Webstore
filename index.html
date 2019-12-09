@@ -31,10 +31,7 @@
 
       <!-- Search for a product (non-functional) -->
       <form>
-        <label class="searchBar" name="productName" id="nameSearch">Search
-            <button class="searchBar" type="button"><span class="material-icons">search</span></button>
-            <input type="search" name="find" id="find">
-        </label>
+        
       </form>
 
       <!-- Additional nav links -->
@@ -50,15 +47,24 @@
 
         <!-- Filtering product form -->
         <form>
+          <h2>Search</h2>
+            <label class=" pad searchBar" name="productName" id="nameSearch">Search
+                <button class="searchBar" type="button"><span class="material-icons">search</span></button>
+                  <input type="search" name="find" id="find">
+              </label>
+        </form>
+        
+        <form>
           <h2>Filters</h2>
-          <fieldset>
-            <label class="pad" for="sort">Show</label>
-              <select name="sort" id="sort">
-                <option value="price-high">Price, highest to lowest</option>
-                <option value="price-low">Price, lowest to highest</option>
-                <option value="newest">Newest releases</option>
+          <form>
+            <label class="pad" for="catSearch">Show</label>
+              <select name="categoryName" id="catSearch">
+                <option value="tshirts">Shirts</option>
+                <option value="sweaters">Sweaters</option>
+                <option value="pants">Pants</option>
+                <option value="hats">Hats</option>
               </select>
-          </fieldset>
+          </form>
           <fieldset>
             <legend class="padding">Colour</legend>
               <ul>
@@ -71,7 +77,7 @@
           </fieldset>
           <fieldset>
             <legend>Sizes</legend>
-              <ol>
+              <ul>
                 <li class="pad"><input type="checkbox" name="size" value="xs" id="xs"> <label for="xs">XS</label></li>
                 <li class="pad"><input type="checkbox" name="size" value="sm" id="sm"> <label for="sm">S</label></li>
                 <li class="pad"><input type="checkbox" name="size" value="md" id="md"> <label for="md">M</label></li>
@@ -81,7 +87,7 @@
           </fieldset>
           <fieldset>
             <legend>Ratings (above)</legend>
-            <ol>
+            <ul>
               <li>
                 <input type="radio" name="rating" value="4" id="aboveFour">
                 <label for="aboveFour">
@@ -117,6 +123,7 @@
         <div id="products">
           <!-- Product 1 -->
           <section class="product" id=product>
+            <img src="img/GreyChino.jpg">
           </section>
           <!-- Product 2 -->
           <section class="product" id=product>
@@ -125,7 +132,6 @@
           <section class="product" id=product>
           </section>
           <!-- Product 4 -->
-          <article class="product">
           <section class="product" id=product>
           </section>
           <!-- Product 5 -->
@@ -135,7 +141,7 @@
       </section>
 
       <footer class="pageNumber">
-        <p>1-5 of 20 products found</p>
+        <p> 20 products found</p>
         <nav aria-label="Product Pages">
           <ul>
             <li class="padLeft" ><a href="#" aria-label="Previous page">prev</a></li>

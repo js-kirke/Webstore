@@ -1,84 +1,105 @@
 const products = [
   {
-  name: `Product One`,
+  pic: `img/GreyChino.jpg`,
+  name: `Grey Chino Pants`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 25.00
+  price: 25.00,
+  category: `pants`,
   },{
-  name: `Product Two`,
+  name: `Adidas Sweat Pants`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 10.00
+  price: 10.00,
+  category: `pants`,
   },{
-  name: `Product Three`,
+  name: `Grey Pants`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 20.00
+  price: 20.00,
+  category: `pants`,
   },{
-  name: `Product Four`,
+  name: `Beige Cargo Pants`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 30.00
+  price: 30.00,
+  category: `pants`,
   },{
-  name: `Product Five`,
+  name: `Blue Track Pants`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `pants`,
   },{
-  name: `Product Six`,
+  name: `Mountain Sweater`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `sweaters`,
   },{
-  name: `Product Seven`,
+  name: `Blue Cardigan`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `sweaters`,
   },{
-  name: `Product Eight`,
+  name: `Grey Sweater`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `sweaters`,
   },{
-  name: `Product Nine`,
+  name: `Graphic Sweater`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `sweaters`,
   },{
-  name: `Product Ten`,
+  name: `Black Sweater`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `sweaters`,
   },{
-  name: `Product Eleven`,
+  name: `Black T-shirt`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `tshirts`,
   },{
-  name: `Product Twelve`,
+  name: `Graphic T-shirt`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `tshirts`,
   },{
-  name: `Product Thirteen`,
+  name: `White T-shirt`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `tshirts`,
   },{
-  name: `Product Fourteen`,
+  name: `Red Text T-shirt`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `tshirts`,
   },{
-  name: `Product Fifteen`,
+  name: `Bacon T-shirt`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `tshirts`,
   },{
-  name: `Product Sixteen`,
+  name: `New York Hat`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `hats`,
   },{
-  name: `Product Seventeen`,
+  name: `Summer Hat`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `hats`,
   },{
-  name: `Product Eighteen`,
+  name: `Cowboy Hat`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `hats`,
   },{
-  name: `Product Nineteen`,
+  name: `Ice Cream Hat`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `hats`,
   },{
-  name: `Product Twenty`,
+  name: `Bucket Hat`,
   description: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-  price: 35.00
+  price: 35.00,
+  category: `hats`,
   }
 ]
 
@@ -89,7 +110,7 @@ function getProductsAsHTMLString(product) {
 
   return `<article class="product">
   <header>
-    <img class="roundCorner" src="img/product.jpg" alt="Product Image">
+    <img class="prodPic" src="${product.pic}">
   </header>
   <h3>${product.name}</h3>
   <p>${product.description}</p>
@@ -121,7 +142,7 @@ function getProductsAsHTMLString(product) {
       <button type="button"><span class="material-icons">add_shopping_cart</span></button>
       <button type="button"><span class="material-icons">favorite</span></button>
       <br>
-      <a href="#">see more</a>
+      <a href="#">see more ${product.category}</a>
     </footer>
   </form>
 </article>`
@@ -132,13 +153,17 @@ function renderProducts(arr){
   const strOfHtml = arrOfHtml.join('\n');
   document.getElementById('products').innerHTML = strOfHtml;
 }
-renderProducts(products);
 
 
 
-function lowCostProd(products) {
-  return products.price < 30.00 ;
+
+
+
+function filterByName(product) {
+  // When a parameter it sent to a filter, it gets stored as "this"
+  return product.name.toLowerCase().includes(this.trim().toLowerCase())
 }
+
 
 function searchByName(event) {
   const searchTerm = event.target.value; // From the input field
@@ -146,7 +171,12 @@ function searchByName(event) {
   renderProducts(arrNameCheck);
 }
 
+function searchByCat(event) {
+  const searchTerm = event.target.value; // From the dropdown/select field
+  const arrCatCheck = products.filter(filterByCat, searchTerm)
+  renderProducts(arrCatCheck);
+}
+renderProducts(products);
 
 document.getElementById('nameSearch').addEventListener('input', searchByName)
-
-document.getElementById('nameSearch').addEventListener('input', searchByName)
+document.getElementById('catSearch').addEventListener('change', searchByCat)

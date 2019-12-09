@@ -46,13 +46,19 @@ li{
   display: inline;
 }
 
+footer{
+  display: inline;
+}
 
+ul{
+  margin: 0;
+}
 .pad{
   padding: 1.5em
 }
 .searchBar{
   display: inline;
-  margin-left: 78%
+  text-align: right;
 }
 
 .favAndShopping{
@@ -67,7 +73,7 @@ li{
 }
 
 .logo{
-  max-width: 50%;
+  max-width: 75%;
   padding: .5em;
   background-color: var(--primary-b);
   margin: 1em;
@@ -85,6 +91,7 @@ li{
   text-align: center;
   background-color: var(--primary-a);
   border-radius: 1.5em;
+  font-size: 1.5em;
 }
 
 .bottomFoot{
@@ -104,9 +111,16 @@ li{
   .padRight{
     padding: 1em;
   }
+
+  .prodPic{
+    width:20em;
+  }
   
   @media only screen and (min-width: 1000px) {
     .product {
       max-width: 25%;
+    }
+    .logo{
+      max-width: 100%;
     }
   }
